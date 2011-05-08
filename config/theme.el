@@ -13,3 +13,10 @@
 (require 'color-theme)
 (eval-after-load "color-theme"
   '(color-theme-initialize))
+
+
+;; color theme tangotango
+;; https://github.com/juba/color-theme-tangotango
+(add-to-list 'load-path "~/.emacs.d/plugins/color-theme-tangotango")
+(require 'color-theme-tangotango)
+(color-theme-tangotango)
