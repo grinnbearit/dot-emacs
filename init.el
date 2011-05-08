@@ -8,3 +8,4 @@
 
 (add-to-list 'load-path "~/.emacs.d/config")
 (load "theme")				; appearance
+(load "defaults")			; defaults
