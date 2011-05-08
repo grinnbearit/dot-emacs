@@ -19,3 +19,8 @@
 ;; Prevent the startup message from showing up
 ;; http://stackoverflow.com/questions/3869159/how-do-i-kill-the-gnu-emacs-buffer-when-emacs-starts
 (setq inhibit-startup-message t)
+
+
+;; System to emacs copy-paste
+;; http://stackoverflow.com/questions/64360/how-to-copy-text-from-emacs-to-another-application-on-linux
+(setq x-select-enable-clipboard t)
