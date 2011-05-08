@@ -1,3 +1,6 @@
 [submodule "plugins/color-theme-tangotango"]
 	path = plugins/color-theme-tangotango
 	url = https://github.com/juba/color-theme-tangotango
+[submodule "plugins/magit"]
+	path = plugins/magit
+	url = git://github.com/philjackson/magit.git

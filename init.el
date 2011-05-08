@@ -10,3 +10,4 @@
 (add-to-list 'load-path "~/.emacs.d/plugins") ; external repos and downloads
 (load "theme")				      ; appearance
 (load "defaults")			      ; defaults
+(load "magit")				      ; magit
