@@ -5,3 +5,6 @@
 ;; and brighter; it simply makes everything else vanish."
 ;; -Neal Stephenson, "In the Beginning was the Command Line"
 ;; -https://github.com/technomancy/emacs-starter-kit/blob/master/init.el
+
+(add-to-list 'load-path "~/.emacs.d/config")
+(load "theme")				; appearance
