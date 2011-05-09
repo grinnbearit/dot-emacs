@@ -7,8 +7,12 @@
 ;; -https://github.com/technomancy/emacs-starter-kit/blob/master/init.el
 
 
-(add-to-list 'load-path "~/.emacs.d/config")  ; custom configurations
-(load "theme")				      ; appearance
-(load "defaults")			      ; defaults
-(load "magit")				      ; magit
-(load "package")			      ; package manager
+(defun expand-path (path)
+  (concat user-emacs-directory path))
+
+
+(add-to-list 'load-path (expand-path "config"))  ; custom configurations
+(load "theme")				         ; appearance
+(load "defaults")                                ; defaults
+(load "magit")				         ; magit
+(load "package")			         ; package manager
