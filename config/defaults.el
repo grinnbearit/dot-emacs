@@ -30,3 +30,8 @@
 ;; http://www.emacswiki.org/emacs/SavePlace
 (require 'saveplace)
 (setq-default save-place t)
+
+
+;; Uniquify buffer names
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
