@@ -33,5 +33,18 @@
 
 
 ;; Uniquify buffer names
+;; http://www.gnu.org/software/libtool/manual/emacs/Uniquify.html
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
+
+
+;; Initialize ido mode
+;; http://www.emacswiki.org/emacs/InteractivelyDoThings
+(require 'ido)
+(ido-mode t)
+
+
+;; Highlight parens
+;; http://www.emacswiki.org/emacs/ShowParenMode
+(show-paren-mode t)
+(setq show-paren-delay 0)
