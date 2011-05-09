@@ -24,3 +24,9 @@
 ;; System to emacs copy-paste
 ;; http://stackoverflow.com/questions/64360/how-to-copy-text-from-emacs-to-another-application-on-linux
 (setq x-select-enable-clipboard t)
+
+
+;; Save cursor position in a file
+;; http://www.emacswiki.org/emacs/SavePlace
+(require 'saveplace)
+(setq-default save-place t)
