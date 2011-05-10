@@ -48,3 +48,15 @@
 ;; http://www.emacswiki.org/emacs/ShowParenMode
 (show-paren-mode t)
 (setq show-paren-delay 0)
+
+
+;; Indent whole buffer
+;; http://emacsblog.org/2007/01/17/indent-whole-buffer/
+(defun indent-whole-buffer ()
+  "indent whole buffer"
+  (interactive)
+  (delete-trailing-whitespace)
+  (indent-region (point-min) (point-max) nil)
+  (untabify (point-min) (point-max)))
+
+(global-set-key (kbd "C-c n") 'indent-whole-buffer)
