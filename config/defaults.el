@@ -60,3 +60,9 @@
   (untabify (point-min) (point-max)))
 
 (global-set-key (kbd "C-c n") 'indent-whole-buffer)
+
+
+;; Set default browser
+;; http://www.emacswiki.org/cgi-bin/wiki/BrowseUrl#toc9
+(setq browse-url-browser-function 'browse-url-generic
+          browse-url-generic-program "google-chrome")
