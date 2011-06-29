@@ -4,3 +4,6 @@
 [submodule "plugins/magit"]
 	path = plugins/magit
 	url = git://github.com/philjackson/magit.git
+[submodule "plugins/distel"]
+	path = plugins/distel
+	url = https://github.com/massemanet/distel
