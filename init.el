@@ -17,3 +17,4 @@
 (load "magit")				         ; magit
 (load "package")			         ; package manager
 (load "clojure")				 ; clojure
+(load "erlang")					 ; erlang
