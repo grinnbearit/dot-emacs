@@ -18,3 +18,4 @@
 (load "package")			         ; package manager
 (load "clojure")				 ; clojure
 (load "erlang")					 ; erlang
+(load "auto-complete")				 ; auto-complete
