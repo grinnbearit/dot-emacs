@@ -7,3 +7,6 @@
 [submodule "plugins/distel"]
 	path = plugins/distel
 	url = https://github.com/massemanet/distel
+[submodule "plugins/ac-slime"]
+	path = plugins/ac-slime
+	url = git://github.com/purcell/ac-slime.git
