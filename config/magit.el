@@ -13,4 +13,7 @@
 (add-to-list 'load-path (expand-path "plugins/mo-git-blame"))
 (autoload 'mo-git-blame-file "mo-git-blame" nil t)
 (autoload 'mo-git-blame-current "mo-git-blame" nil t)
+(defalias 'git-blame-file 'mo-git-blame-file)
+(defalias 'git-blame 'mo-git-blame-current)
+
 
