@@ -19,3 +19,4 @@
 (load "auto-complete")				 ; auto-complete
 (load "clojure")				 ; clojure
 (load "erlang")					 ; erlang
+(load "octave")					 ; octave
