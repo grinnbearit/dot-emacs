@@ -23,3 +23,25 @@
 (require 'hippie-expand-slime)
 (add-hook 'slime-mode-hook 'set-up-slime-hippie-expand)
 (add-hook 'slime-repl-mode-hook 'set-up-slime-hippie-expand)
+
+
+;; http://objectmix.com/lisp/171856-how-enable-paredit-slime-repl.html#post608409
+;; http://w01fe.com/blog/2011/11/fixing-paredit-in-the-clojure-repl/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+clojure+%28Planet+Clojure%29&utm_content=Google+Reader
+;; paredit mode in slime-repl
+
+
+(defun fix-paredit-repl ()
+  (interactive)
+  (local-set-key "{" 'paredit-open-curly)
+  (local-set-key "}" 'paredit-close-curly)
+  (modify-syntax-entry ?\{ "(}") 
+  (modify-syntax-entry ?\} "){")
+  (modify-syntax-entry ?\[ "(]")
+  (modify-syntax-entry ?\] ")["))
+
+
+(add-hook 'slime-repl-mode-hook (lambda ()
+				  (paredit-mode +1)
+				  (fix-paredit-repl)))
+
+
