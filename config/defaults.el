@@ -66,3 +66,13 @@
 ;; http://www.emacswiki.org/cgi-bin/wiki/BrowseUrl#toc9
 (setq browse-url-browser-function 'browse-url-generic
           browse-url-generic-program "google-chrome")
+
+
+;; Set revert-buffer to F5
+;; Vedang 
+(global-set-key (kbd "<f5>") 'revert-buffer)
+
+
+;; Set yes-or-no-p to y-or-n-p
+;; Vedang 
+(defalias 'yes-or-no-p 'y-or-n-p)
