@@ -6,6 +6,7 @@
 
 ;; For easy access
 (global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "s-q") 'magit-status)
 
 
 ;; mo-git-blame

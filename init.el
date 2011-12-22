@@ -6,6 +6,8 @@
 ;; -Neal Stephenson, "In the Beginning was the Command Line"
 ;; -https://github.com/technomancy/emacs-starter-kit/blob/master/init.el
 
+(setq vc-handled-backends nil)
+
 
 (defun expand-path (path)
   (concat user-emacs-directory path))
@@ -18,5 +20,6 @@
 (load "package")			         ; package manager
 (load "auto-complete")				 ; auto-complete
 (load "clojure")				 ; clojure
+(load "layout")				         ; loads old files + windows
 (load "erlang")					 ; erlang
 (load "octave")					 ; octave
