@@ -68,11 +68,9 @@
           browse-url-generic-program "google-chrome")
 
 
-;; Set revert-buffer to F5
-;; Vedang 
-(global-set-key (kbd "<f5>") 'revert-buffer)
-
-
-;; Set yes-or-no-p to y-or-n-p
-;; Vedang 
-(defalias 'yes-or-no-p 'y-or-n-p)
+;; Vedang
+(global-set-key (kbd "<f5>") 'revert-buffer) ; Set revert-buffer to F5
+(defalias 'yes-or-no-p 'y-or-n-p) ; Set yes-or-no-p to y-or-n-p
+(setq require-final-newline t) ; Always add a newline at the end of a file
+(add-hook 'before-save-hook 'delete-trailing-whitespace) ; Delete trailing whitespace before saving
+(setq-default indent-tabs-mode nil) ; Replaces tabs with spaces
