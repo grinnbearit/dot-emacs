@@ -5,17 +5,6 @@
 (setq make-backup-files nil)
 
 
-;; Start emacs in fullscreen mode
-;; http://ubuntuforums.org/showpost.php?s=de298ab26968dce6fced91a444889cc3&p=5570302&postcount=5
-(defun toggle-fullscreen ()
-  (interactive)
-  (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
-	    		 '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0))
-  (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
-	    		 '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0)))
-(toggle-fullscreen)
-
-
 ;; Prevent the startup message from showing up
 ;; http://stackoverflow.com/questions/3869159/how-do-i-kill-the-gnu-emacs-buffer-when-emacs-starts
 (setq inhibit-startup-message t)
