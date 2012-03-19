@@ -63,3 +63,8 @@
 (setq require-final-newline t) ; Always add a newline at the end of a file
 (add-hook 'before-save-hook 'delete-trailing-whitespace) ; Delete trailing whitespace before saving
 (setq-default indent-tabs-mode nil) ; Replaces tabs with spaces
+
+
+;; font
+;; http://stackoverflow.com/questions/294664/how-to-set-the-font-size-in-emacs
+(set-default-font "-adobe-courier-medium-r-normal--18-180-75-75-m-110-iso8859-1")
