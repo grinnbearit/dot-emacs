@@ -68,3 +68,8 @@
 ;; font
 ;; http://stackoverflow.com/questions/294664/how-to-set-the-font-size-in-emacs
 (set-default-font "-adobe-courier-medium-r-normal--18-180-75-75-m-110-iso8859-1")
+
+
+;; mac osx specific
+;; http://stackoverflow.com/questions/604808/option-or-command-key-as-meta-key-for-lispbox-on-macintosh
+(setq mac-command-modifier 'meta)
