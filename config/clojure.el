@@ -45,3 +45,6 @@
 				  (fix-paredit-repl)))
 
 
+;; Prevent slime from choking on unicode
+;; https://github.com/technomancy/swank-clojure/issues/57
+(setq slime-net-coding-system 'utf-8-unix)
