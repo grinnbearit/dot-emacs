@@ -10,6 +10,3 @@
 [submodule "plugins/ac-slime"]
 	path = plugins/ac-slime
 	url = git://github.com/purcell/ac-slime.git
-[submodule "plugins/mo-git-blame"]
-	path = plugins/mo-git-blame
-	url = git://github.com/mbunkus/mo-git-blame.git
