@@ -48,3 +48,35 @@
 ;; Prevent slime from choking on unicode
 ;; https://github.com/technomancy/swank-clojure/issues/57
 (setq slime-net-coding-system 'utf-8-unix)
+
+
+;; Translate filenames accessed over tramp so slime works on remote machines
+;; https://groups.google.com/forum/#!msg/swank-clojure/av0vE-z54ZQ/O80OA-Vt8TsJ
+(defun slime-tramp-local-filename (f)
+  (interactive)
+  (if (file-remote-p f)
+      (tramp-file-name-localname
+       (tramp-dissect-file-name f))
+    f))
+
+(defun slime-tramp-remote-filename (f)
+  (interactive)
+  (if (file-remote-p default-directory)
+      (tramp-make-tramp-file-name
+       (tramp-file-name-method
+    (tramp-dissect-file-name default-directory))
+       (tramp-file-name-user
+    (tramp-dissect-file-name default-directory))
+       (tramp-file-name-host
+    (tramp-dissect-file-name default-directory))
+       f)
+    f))
+
+(defun slime-remote-file-name-hook ()
+  (interactive)
+    (setq slime-from-lisp-filename-function
+      'slime-tramp-remote-filename)
+    (setq slime-to-lisp-filename-function
+      'slime-tramp-local-filename))
+
+(add-hook 'slime-connected-hook 'slime-remote-file-name-hook)
