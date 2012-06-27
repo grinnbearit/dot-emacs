@@ -34,7 +34,7 @@
   (interactive)
   (local-set-key "{" 'paredit-open-curly)
   (local-set-key "}" 'paredit-close-curly)
-  (modify-syntax-entry ?\{ "(}") 
+  (modify-syntax-entry ?\{ "(}")
   (modify-syntax-entry ?\} "){")
   (modify-syntax-entry ?\[ "(]")
   (modify-syntax-entry ?\] ")["))
@@ -80,3 +80,66 @@
       'slime-tramp-local-filename))
 
 (add-hook 'slime-connected-hook 'slime-remote-file-name-hook)
+
+
+;; midje integration
+;; via @kapilready
+;; https://gist.github.com/2868961
+;; with modifications to match leiningen
+
+
+;; https://github.com/technomancy/clojure-mode/blob/master/clojure-mode.el#L1169
+(defun clojure-in-tests-p ()
+  (or (string-match-p "test\." (clojure-find-ns))
+      (string-match-p "/test" (buffer-file-name))))
+
+
+(remove-hook 'clojure-mode-hook 'clojure-test-maybe-enable)
+
+
+(defun midje-test-for (namespace)
+  (let* ((namespace (clojure-underscores-for-hyphens namespace))
+         (segments (split-string namespace "\\."))
+         (project-name (car segments))
+         (test-segments (append (list "test" project-name "test") (cdr segments))))
+    (mapconcat 'identity test-segments "/")))
+
+
+(defun midje-jump-to-test ()
+  "Jump from implementation file to test."
+  (interactive)
+  (find-file (format "%s/%s.clj"
+                     (file-name-as-directory
+                      (locate-dominating-file buffer-file-name "src/"))
+                     (midje-test-for (clojure-find-ns)))))
+
+
+(defun midje-implementation-for (namespace)
+  (let* ((namespace (clojure-underscores-for-hyphens namespace))
+         (segments (split-string namespace "\\."))
+         (project-name (car segments))
+         (src-segments (cons project-name (cdr (cdr segments)))))
+    (mapconcat 'identity src-segments "/")))
+
+
+(defun midje-jump-to-implementation ()
+  "Jump from midje test file to implementation."
+  (interactive)
+  (find-file (format "%s/src/%s.clj"
+                     (locate-dominating-file buffer-file-name "src/")
+                     (midje-implementation-for (clojure-find-package)))))
+
+
+(defun midje-jump-between-tests-and-code ()
+  (interactive)
+  (if (clojure-in-tests-p)
+      (midje-jump-to-implementation)
+    (midje-jump-to-test)))
+
+
+(defun setup-midje-bindings ()
+  (interactive)
+  (define-key clojure-mode-map (kbd "C-c t") 'midje-jump-between-tests-and-code))
+
+
+(add-hook 'clojure-mode-hook 'setup-midje-bindings)
