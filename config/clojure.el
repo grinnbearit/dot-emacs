@@ -100,15 +100,14 @@
 (defun midje-test-for (namespace)
   (let* ((namespace (clojure-underscores-for-hyphens namespace))
          (segments (split-string namespace "\\."))
-         (project-name (car segments))
-         (test-segments (append (list "test" project-name "test") (cdr segments))))
+         (test-segments (append (list "test") segments)))
     (mapconcat 'identity test-segments "/")))
 
 
 (defun midje-jump-to-test ()
   "Jump from implementation file to test."
   (interactive)
-  (find-file (format "%s/%s.clj"
+  (find-file (format "%s/%s_test.clj"
                      (file-name-as-directory
                       (locate-dominating-file buffer-file-name "src/"))
                      (midje-test-for (clojure-find-ns)))))
@@ -116,10 +115,8 @@
 
 (defun midje-implementation-for (namespace)
   (let* ((namespace (clojure-underscores-for-hyphens namespace))
-         (segments (split-string namespace "\\."))
-         (project-name (car segments))
-         (src-segments (cons project-name (cdr (cdr segments)))))
-    (mapconcat 'identity src-segments "/")))
+         (segments (split-string (replace-regexp-in-string "_test" "" namespace) "\\.")))
+    (mapconcat 'identity segments "/")))
 
 
 (defun midje-jump-to-implementation ()
