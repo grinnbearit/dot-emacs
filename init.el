@@ -21,3 +21,4 @@
 (load "clojurescript")				 ; clojurescript
 (load "erlang")					 ; erlang
 (load "octave")					 ; octave
+(load "scss")					 ; scss
