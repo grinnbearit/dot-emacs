@@ -8,12 +8,21 @@
 
 (require 'clojure-mode)
 
+
 (define-derived-mode clojurescript-mode clojure-mode "ClojureScript"
-  (set (make-local-variable 'inferior-lisp-program)
-       (run-lisp "lein trampoline cljsbuild repl-listen"))
-  (when (functionp 'slime-mode)
-    (slime-mode -1)))
+  "Major Mode for Clojurescript")
+
 
 (add-to-list 'auto-mode-alist '("\\.cljs$" . clojurescript-mode))
+
+
+(add-hook 'clojurescript-mode-hook
+          (lambda ()
+            (set (make-local-variable 'inferior-lisp-program)
+                 (run-lisp "lein trampoline cljsbuild repl-listen"))
+            (paredit-mode +1)
+            (slime-mode -1)))
+
+
 
 (provide 'clojurescript-mode)
