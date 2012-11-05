@@ -16,6 +16,7 @@
 (load "defaults")                                ; defaults
 (load "magit")				         ; magit
 (load "package")			         ; package manager
+(load "auto-complete")				 ; auto-complete
 (load "clojure")				 ; clojure
 (load "clojurescript")				 ; clojurescript
 (load "erlang")					 ; erlang
