@@ -1,28 +1,38 @@
-;; Clojurescript
+;;; Clojurescript
 
-
-;; Elements stolen from both
 ;; http://www.spyfoos.com/index.php/2012/03/17/cljs-template-with-clojureclojurescript-repls-from-emacs/
-;; and
-;; http://marmalade-repo.org/packages/clojurescript-mode
+;; https://github.com/technomancy/clojure-mode/blob/master/clojurescript-mode.el
 
 (require 'clojure-mode)
 
+(eval-when-compile
+  (defvar paredit-mode)
+  (defvar paredit-version))
+
+
+(defvar clojurescript-clj-repl
+  "lein trampoline cljsbuild repl-listen")
+
+
+(defun clojurescript-start-cljs-repl ()
+  (inferior-lisp-proc))
 
 (define-derived-mode clojurescript-mode clojure-mode "ClojureScript"
-  "Major Mode for Clojurescript")
+  "Major mode for ClojureScript"
 
+  (set (make-local-variable 'inferior-lisp-program) clojurescript-clj-repl)
+  (add-hook 'inferior-lisp-mode-hook 'clojurescript-start-cljs-repl)
+  (when (and (featurep 'paredit) paredit-mode (>= paredit-version 21))
+    (define-key clojurescript-mode-map "{" 'paredit-open-curly)
+    (define-key clojurescript-mode-map "}" 'paredit-close-curly))
+  (when (functionp 'slime-mode)
+    (slime-mode -1))
+  (nrepl-interaction-mode -1)
+  (define-key clojurescript-mode-map "\C-x\C-e" 'clojurescript-eval-last-expression)
+  (define-key clojurescript-mode-map "\C-c\C-k" 'clojurescript-compile-and-load-file))
 
-(add-to-list 'auto-mode-alist '("\\.cljs$" . clojurescript-mode))
+(put-clojure-indent 'this-as 'defun)
 
-
-(add-hook 'clojurescript-mode-hook
-          (lambda ()
-            (set (make-local-variable 'inferior-lisp-program)
-                 (run-lisp "lein trampoline cljsbuild repl-listen"))
-            (paredit-mode +1)
-            (slime-mode -1)))
-
-
+(add-to-list 'auto-mode-alist '("\\.cljs\\'" . clojurescript-mode))
 
 (provide 'clojurescript-mode)
