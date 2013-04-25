@@ -10,3 +10,6 @@
 [submodule "plugins/ac-slime"]
 	path = plugins/ac-slime
 	url = git://github.com/purcell/ac-slime.git
+[submodule "plugins/ESS"]
+	path = plugins/ESS
+	url = https://github.com/emacs-ess/ESS

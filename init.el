@@ -22,3 +22,4 @@
 (load "erlang")					 ; erlang
 (load "octave")					 ; octave
 (load "scss")					 ; scss
+(load "ess")					 ; emacs speaks statistics
