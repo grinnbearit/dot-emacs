@@ -67,7 +67,7 @@
 
 ;; font
 ;; http://stackoverflow.com/questions/294664/how-to-set-the-font-size-in-emacs
-(set-default-font "-adobe-courier-medium-r-normal--18-180-75-75-m-110-iso8859-1")
+(set-default-font "-adobe-courier-medium-r-normal--14-180-75-75-m-110-iso8859-1")
 
 
 ;; mac osx specific
