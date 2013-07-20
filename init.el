@@ -24,3 +24,4 @@
 (load "scss")                                    ; scss
 (load "ess")                                     ; emacs speaks statistics
 (load "javascript")                              ; javascript
+(load "emmet")                                   ; emmet

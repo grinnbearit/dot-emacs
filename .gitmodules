@@ -13,3 +13,6 @@
 [submodule "plugins/ESS"]
 	path = plugins/ESS
 	url = https://github.com/emacs-ess/ESS
+[submodule "plugins/emmet-mode"]
+	path = plugins/emmet-mode
+	url = https://github.com/smihica/emmet-mode
