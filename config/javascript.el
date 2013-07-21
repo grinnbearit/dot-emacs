@@ -9,12 +9,12 @@
 
 (defun js-mode-changes ()
   (setq js-indent-level 2)
+  (smartparens-mode t)
   (font-lock-add-keywords
    'js-mode `(("\\(function *\\)("
                (0 (progn (compose-region (match-beginning 1)
                                          (match-end 1) "ƒ")
-                         nil)))))
-  (electric-pair-mode t))
+                         nil))))))
 
 
 (add-hook 'js-mode-hook 'js-mode-changes)
