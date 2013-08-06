@@ -25,3 +25,4 @@
 (load "ess")                                     ; emacs speaks statistics
 (load "javascript")                              ; javascript
 (load "emmet")                                   ; emmet
+(load "coffee")                                  ; coffee
