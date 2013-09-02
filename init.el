@@ -26,3 +26,4 @@
 (load "javascript")                              ; javascript
 (load "emmet")                                   ; emmet
 (load "coffee")                                  ; coffee
+(load "markdown")                                ; markdown
