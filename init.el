@@ -14,12 +14,19 @@
 
 
 (add-to-list 'load-path (expand-path "config"))  ; custom configurations
-(load "theme")				         ; appearance
+(load "theme")                                   ; appearance
 (load "defaults")                                ; defaults
-(load "magit")				         ; magit
-(load "package")			         ; package manager
-(load "auto-complete")				 ; auto-complete
-(load "clojure")				 ; clojure
 (load "layout")				         ; loads old files + windows
-(load "erlang")					 ; erlang
-(load "octave")					 ; octave
+(load "magit")                                   ; magit
+(load "package")                                 ; package manager
+(load "auto-complete")                           ; auto-complete
+(load "clojure")                                 ; clojure
+(load "clojurescript")                           ; clojurescript
+(load "erlang")                                  ; erlang
+(load "octave")                                  ; octave
+(load "scss")                                    ; scss
+(load "ess")                                     ; emacs speaks statistics
+(load "javascript")                              ; javascript
+(load "emmet")                                   ; emmet
+(load "coffee")                                  ; coffee
+(load "markdown")                                ; markdown

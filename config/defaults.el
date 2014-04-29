@@ -5,17 +5,6 @@
 (setq make-backup-files nil)
 
 
-;; Start emacs in fullscreen mode
-;; http://ubuntuforums.org/showpost.php?s=de298ab26968dce6fced91a444889cc3&p=5570302&postcount=5
-(defun toggle-fullscreen ()
-  (interactive)
-  (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
-	    		 '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0))
-  (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
-	    		 '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0)))
-(toggle-fullscreen)
-
-
 ;; Prevent the startup message from showing up
 ;; http://stackoverflow.com/questions/3869159/how-do-i-kill-the-gnu-emacs-buffer-when-emacs-starts
 (setq inhibit-startup-message t)
@@ -65,14 +54,22 @@
 ;; Set default browser
 ;; http://www.emacswiki.org/cgi-bin/wiki/BrowseUrl#toc9
 (setq browse-url-browser-function 'browse-url-generic
-          browse-url-generic-program "google-chrome")
+          browse-url-generic-program "open")
 
 
-;; Set revert-buffer to F5
-;; Vedang 
-(global-set-key (kbd "<f5>") 'revert-buffer)
+;; Vedang
+(global-set-key (kbd "<f5>") 'revert-buffer) ; Set revert-buffer to F5
+(defalias 'yes-or-no-p 'y-or-n-p) ; Set yes-or-no-p to y-or-n-p
+(setq require-final-newline t) ; Always add a newline at the end of a file
+(add-hook 'before-save-hook 'delete-trailing-whitespace) ; Delete trailing whitespace before saving
+(setq-default indent-tabs-mode nil) ; Replaces tabs with spaces
 
 
-;; Set yes-or-no-p to y-or-n-p
-;; Vedang 
-(defalias 'yes-or-no-p 'y-or-n-p)
+;; font
+;; http://stackoverflow.com/questions/294664/how-to-set-the-font-size-in-emacs
+(set-default-font "-adobe-courier-medium-r-normal--14-180-75-75-m-110-iso8859-1")
+
+
+;; mac osx specific
+;; http://stackoverflow.com/questions/604808/option-or-command-key-as-meta-key-for-lispbox-on-macintosh
+(setq mac-command-modifier 'meta)

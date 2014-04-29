@@ -3,13 +3,16 @@
 	url = https://github.com/juba/color-theme-tangotango
 [submodule "plugins/magit"]
 	path = plugins/magit
-	url = git://github.com/philjackson/magit.git
+	url = git://github.com/magit/magit.git
 [submodule "plugins/distel"]
 	path = plugins/distel
 	url = https://github.com/massemanet/distel
 [submodule "plugins/ac-slime"]
 	path = plugins/ac-slime
 	url = git://github.com/purcell/ac-slime.git
-[submodule "plugins/mo-git-blame"]
-	path = plugins/mo-git-blame
-	url = git://github.com/mbunkus/mo-git-blame.git
+[submodule "plugins/ESS"]
+	path = plugins/ESS
+	url = https://github.com/emacs-ess/ESS
+[submodule "plugins/emmet-mode"]
+	path = plugins/emmet-mode
+	url = https://github.com/smihica/emmet-mode
