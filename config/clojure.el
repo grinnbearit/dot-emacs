@@ -1,33 +1,16 @@
 ;; Clojure
 
 (require 'paredit)
-
 (add-hook 'clojure-mode-hook 'paredit-mode)
-(add-hook 'nrepl-mode-hook 'paredit-mode)
-(add-hook 'nrepl-mode-hook 'nrepl-enable-on-existing-clojure-buffers)
 
-;; configure nrepl
-;; http://ianeslick.com/2013/05/17/clojure-debugging-13-emacs-nrepl-and-ritz/
-;; persistent nrepl history
-;; https://groups.google.com/forum/#!msg/nrepl-el/Nbaeaqw_VBQ/iw9vkvJKyI0J
-
-(require 'nrepl)
+;; cider
+;; https://github.com/clojure-emacs/cider#configuration
+(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (setq nrepl-hide-special-buffers t)
-(setq nrepl-popup-stacktraces-in-repl t)
-(setq nrepl-history-file "~/.nrepl-history.eld")
+(setq cider-prompt-save-file-on-load nil)
+(setq cider-repl-use-clojure-font-lock t)
 
-; Some default eldoc facilities
-(add-hook 'nrepl-connected-hook
-          (defun pnh-clojure-mode-eldoc-hook ()
-            (add-hook 'clojure-mode-hook 'turn-on-eldoc-mode)
-            (add-hook 'nrepl-interaction-mode-hook 'nrepl-turn-on-eldoc-mode)
-            (nrepl-enable-on-existing-clojure-buffers)))
+(setq cider-repl-wrap-history t)
+(setq cider-repl-history-size 1000)
 
-;; Repl mode hook
-(add-hook 'nrepl-mode-hook 'subword-mode)
-
-;; Auto completion for NREPL
-(require 'ac-nrepl)
-(eval-after-load "auto-complete"
-'(add-to-list 'ac-modes 'nrepl-mode))
-(add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
+(add-hook 'cider-repl-mode-hook 'paredit-mode)
