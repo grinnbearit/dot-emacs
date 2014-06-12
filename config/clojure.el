@@ -14,3 +14,6 @@
 (setq cider-repl-history-size 1000)
 
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
+
+;; edn
+(add-to-list 'auto-mode-alist '("\\.edn\\'" . clojure-mode))
