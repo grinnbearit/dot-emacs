@@ -27,3 +27,4 @@
 (load "emmet")                                   ; emmet
 (load "coffee")                                  ; coffee
 (load "markdown")                                ; markdown
+(load "web")                                     ; web
