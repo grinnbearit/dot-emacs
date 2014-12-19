@@ -73,3 +73,9 @@
 ;; mac osx specific
 ;; http://stackoverflow.com/questions/604808/option-or-command-key-as-meta-key-for-lispbox-on-macintosh
 (setq mac-command-modifier 'meta)
+
+
+;; http://ergoemacs.org/emacs/emacs_package_system.html
+(require 'package)
+(package-initialize)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
