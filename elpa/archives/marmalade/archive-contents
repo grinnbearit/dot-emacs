@@ -1,4 +1,13 @@
 (1
+ (org2jekyll .
+	     [(0 0 5)
+	      ((dash
+		(2 8 0))
+	       (s
+		(1 9 0))
+	       (deferred
+		   (0 3 2)))
+	      "Minor mode to publish org-mode post to jekyll without specific yaml" single])
  (zone-matrix .
 	      [(0 0 1)
 	       nil "Matrix themed Zone mode" tar])
@@ -4264,7 +4273,7 @@
 		  (1 11 5)))
 		"Space align various Clojure forms" single])
  (alchemist .
-	    [(0 11 0)
+	    [(0 11 1)
 	     ((emacs
 	       (24)))
 	     "Elixir tooling integration into emacs" tar])

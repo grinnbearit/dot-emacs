@@ -14,6 +14,7 @@
 (add-to-list 'load-path (expand-path "config"))  ; custom configurations
 (load "theme")                                   ; appearance
 (load "defaults")                                ; defaults
+(load "paxedit-mode")                            ; paxedit
 (load "magit")                                   ; magit
 (load "auto-complete")                           ; auto-complete
 (load "clojure")                                 ; clojure
