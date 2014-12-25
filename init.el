@@ -12,18 +12,12 @@
 
 
 (add-to-list 'load-path (expand-path "config"))  ; custom configurations
-(load "theme")                                   ; appearance
 (load "defaults")                                ; defaults
+(load "theme")                                   ; appearance
 (load "paxedit-mode")                            ; paxedit
-(load "magit")                                   ; magit
+(load "magit-mode")                              ; magit
 (load "auto-complete")                           ; auto-complete
 (load "clojure")                                 ; clojure
-(load "erlang")                                  ; erlang
-(load "octave")                                  ; octave
 (load "scss")                                    ; scss
-(load "ess")                                     ; emacs speaks statistics
-(load "javascript")                              ; javascript
-(load "emmet")                                   ; emmet
-(load "coffee")                                  ; coffee
 (load "markdown")                                ; markdown
 (load "web")                                     ; web
