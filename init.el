@@ -21,4 +21,3 @@
 (load "scss")                                    ; scss
 (load "markdown")                                ; markdown
 (load "web")                                     ; web
-(load "rust")                                    ; rust
