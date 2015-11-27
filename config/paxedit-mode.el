@@ -18,5 +18,5 @@
 (define-key paxedit-mode-map (kbd "C-#") 'paxedit-symbol-kill)
 
 
-(add-hook 'emacs-lisp-mode-hook 'paredit-mode)
+;; (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
 (add-hook 'emacs-lisp-mode-hook 'paxedit-mode)
