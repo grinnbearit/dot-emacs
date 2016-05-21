@@ -1,7 +1,8 @@
 ;;; http://stackoverflow.com/questions/28005149/emacs-adding-abbrevs-in-ess-mode
 
 (define-abbrev-table 'ledger-mode-abbrev-table
-  '(("INR" "₹")))
+  '(("INR" "₹")
+    ("EUR" "€")))
 
 (add-hook 'ledger-mode-hook
           (lambda ()
