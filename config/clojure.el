@@ -5,7 +5,6 @@
 
 ;; cider
 ;; https://github.com/clojure-emacs/cider#configuration
-(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (setq nrepl-log-messages t)
 (setq nrepl-hide-special-buffers t)
 (setq cider-repl-tab-command 'indent-for-tab-command)
