@@ -16,7 +16,6 @@
 (load "theme")                                   ; appearance
 (load "paxedit-mode")                            ; paxedit
 (load "magit-config")                            ; magit
-(load "auto-complete")                           ; auto-complete
 (load "clojure")                                 ; clojure
 (load "scss")                                    ; scss
 (load "markdown")                                ; markdown
