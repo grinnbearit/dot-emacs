@@ -29,6 +29,11 @@
      (add-to-list 'ac-modes 'cider-repl-mode)))
 
 
+;; eldoc mode
+(add-hook 'cider-mode-hook 'eldoc-mode)
+(add-hook 'cider-repl-mode-hook 'eldoc-mode)
+
+
 (defun set-auto-complete-as-completion-at-point-function ()
   (setq completion-at-point-functions '(auto-complete)))
 
