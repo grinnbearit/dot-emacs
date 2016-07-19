@@ -75,13 +75,6 @@
 (setq mac-command-modifier 'meta)
 
 
-;; http://ergoemacs.org/emacs/emacs_package_system.html
-(require 'package)
-(package-initialize)
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-
-
 (custom-set-variables
  '(tab-width 4)
  '(indent-tabs-mode nil))

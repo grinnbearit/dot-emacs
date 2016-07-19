@@ -12,6 +12,7 @@
 
 
 (add-to-list 'load-path (expand-path "config"))  ; custom configurations
+(load "package-config")                          ; packages
 (load "defaults")                                ; defaults
 (load "theme")                                   ; appearance
 (load "paxedit-mode")                            ; paxedit
