@@ -2,7 +2,6 @@
 (require 'package)
 (package-initialize)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 
 (package-initialize)
 
@@ -31,7 +30,7 @@
         scss-mode
         seq
         spinner
-        tangotango-theme
+        color-theme-monokai
         web-mode
         with-editor))
 

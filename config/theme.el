@@ -6,5 +6,4 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
-;; https://github.com/juba/color-theme-tangotango
-(load-theme 'tangotango t)
+(color-theme-monokai)
