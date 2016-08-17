@@ -31,7 +31,7 @@
         scss-mode
         seq
         spinner
-        color-theme-monokai
+        tangotango-theme
         web-mode
         with-editor))
 
