@@ -54,7 +54,7 @@
 ;; Set default browser
 ;; http://www.emacswiki.org/cgi-bin/wiki/BrowseUrl#toc9
 (setq browse-url-browser-function 'browse-url-generic
-          browse-url-generic-program "open")
+      browse-url-generic-program "open")
 
 
 ;; Vedang
@@ -78,3 +78,21 @@
 (custom-set-variables
  '(tab-width 4)
  '(indent-tabs-mode nil))
+
+;; next, previous buffer
+;; http://www.rabbitonweb.com/2016/04/11/my-emacs-for-scala-development-part-2/
+(global-set-key (kbd "M-]") 'next-buffer)
+(global-set-key (kbd "M-[") 'previous-buffer)
+
+;; Helm
+;; http://www.rabbitonweb.com/2016/04/11/my-emacs-for-scala-development-part-2/
+;; http://tuhdo.github.io/helm-intro.html
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x C-m") 'helm-M-x)
+(global-set-key (kbd "C-c C-m") 'helm-M-x)
+(global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(setq helm-M-x-fuzzy-match t) ;; optional fuzzy matching for helm-M-x
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+(setq helm-buffers-fuzzy-matching t
+      helm-recentf-fuzzy-match    t)

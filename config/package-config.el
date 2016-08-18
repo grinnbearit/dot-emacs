@@ -33,7 +33,8 @@
         spinner
         tangotango-theme
         web-mode
-        with-editor))
+        with-editor
+        helm))
 
 ;; Update if not installed
 (let (update-flag)
