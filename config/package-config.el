@@ -34,7 +34,8 @@
         tangotango-theme
         web-mode
         with-editor
-        helm))
+        helm
+        haskell-mode))
 
 ;; Update if not installed
 (let (update-flag)
