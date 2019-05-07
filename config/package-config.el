@@ -1,41 +1,15 @@
-;; http://ergoemacs.org/emacs/emacs_package_system.html
+;; http://stable.melpa.org/#/getting-started
 (require 'package)
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 (package-initialize)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
-(package-initialize)
 
 ;; Packages to be installed
 (setq package-list
-      '(ac-cider
-        async
-        auto-complete
-        cider
-        clojure-mode
-        clojurescript-mode
-        dash
-        emmet-mode
-        epl
-        git-commit
-        ledger-mode
-        magit
-        magit-popup
-        markdown-mode
-        paredit
-        paxedit
-        pkg-info
-        popup
-        queue
-        rust-mode
-        scss-mode
-        seq
-        spinner
+      '(magit
         tangotango-theme
-        web-mode
-        with-editor
-        helm
-        haskell-mode))
+        helm))
 
 ;; Update if not installed
 (let (update-flag)

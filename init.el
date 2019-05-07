@@ -7,6 +7,13 @@
 ;; -https://github.com/technomancy/emacs-starter-kit/blob/master/init.el
 
 
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (defun expand-path (path)
   (concat user-emacs-directory path))
 
@@ -15,10 +22,5 @@
 (load "package-config")                          ; packages
 (load "defaults")                                ; defaults
 (load "theme")                                   ; appearance
-(load "paxedit-mode")                            ; paxedit
 (load "magit-config")                            ; magit
-(load "clojure")                                 ; clojure
-(load "scss")                                    ; scss
-(load "markdown")                                ; markdown
-(load "web")                                     ; web
 (load "ledger-config")                           ; ledger-cli
