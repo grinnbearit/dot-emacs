@@ -16,3 +16,4 @@
 (load "theme")                                   ; appearance
 (load "magit-config")                            ; magit
 (load "ledger-config")                           ; ledger-cli
+(load "parinfer-config")
