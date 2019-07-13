@@ -1,4 +1,5 @@
 ;; http://stable.melpa.org/#/getting-started
+(package-initialize)
 (require 'package)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
                     (not (gnutls-available-p))))
@@ -22,6 +23,10 @@ There are two things you can do about this warning:
 ;; Packages to be installed
 (setq package-list
       '(magit
+        use-package
+        paredit
+        parinfer
+        ledger-mode
         clojure-mode
         cider
         tangotango-theme
