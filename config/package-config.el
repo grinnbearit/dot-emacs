@@ -24,11 +24,10 @@ There are two things you can do about this warning:
 (setq package-list
       '(magit
         use-package
-        paredit
-        parinfer
         ledger-mode
         clojure-mode
         cider
+        paredit
         tangotango-theme
         helm))
 
