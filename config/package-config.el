@@ -22,14 +22,33 @@ There are two things you can do about this warning:
 
 ;; Packages to be installed
 (setq package-list
-      '(magit
-        use-package
-        ledger-mode
-        clojure-mode
+      '(ac-cider
+        auto-complete
         cider
+        clojure-mode
+        helm
+        helm-core
+        ledger-mode
+        magit
+        git-commit
         paredit
+        parinfer
+        dash
+        parseedn
+        parseclj
+        a
+        pkg-info
+        epl
+        popup
+        queue
+        sesman
+        spinner
         tangotango-theme
-        helm))
+        transient
+        use-package
+        bind-key
+        with-editor
+        async))
 
 ;; Update if not installed
 (let (update-flag)
