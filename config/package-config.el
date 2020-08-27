@@ -1,5 +1,4 @@
 ;; http://stable.melpa.org/#/getting-started
-(package-initialize)
 (require 'package)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
                     (not (gnutls-available-p))))
