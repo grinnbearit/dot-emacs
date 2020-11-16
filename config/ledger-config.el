@@ -2,7 +2,8 @@
 
 (define-abbrev-table 'ledger-mode-abbrev-table
   '(("INR" "₹")
-    ("EUR" "€")))
+    ("EUR" "€")
+    ("GBP" "£")))
 
 (add-hook 'ledger-mode-hook
           (lambda ()
