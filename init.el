@@ -16,3 +16,4 @@
 (load "defaults")                                ; general settings
 (load "magit-config")                            ; magit
 (load "ledger-config")                           ; ledger-cli
+(load "rust-config")                             ; rust
