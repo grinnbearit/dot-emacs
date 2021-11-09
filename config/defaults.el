@@ -63,3 +63,8 @@
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
+
+;; https://github.com/abo-abo/lispy
+(straight-use-package 'lispy)
+(lispy-set-key-theme '(special paredit c-digits)) ; https://www.reddit.com/r/emacs/comments/73hsml/lispy_and_clojure/
+(add-hook 'emacs-lisp-mode-hook #'lispy-mode)
