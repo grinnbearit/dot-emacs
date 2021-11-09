@@ -66,5 +66,7 @@
 
 ;; https://github.com/abo-abo/lispy
 (straight-use-package 'lispy)
-(lispy-set-key-theme '(special paredit c-digits)) ; https://www.reddit.com/r/emacs/comments/73hsml/lispy_and_clojure/
 (add-hook 'emacs-lisp-mode-hook #'lispy-mode)
+
+;; https://www.emacswiki.org/emacs/ShowParenMode
+(show-paren-mode 1)
