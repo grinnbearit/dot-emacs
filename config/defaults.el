@@ -3,10 +3,10 @@
 (setq mac-option-modifier 'super)
 (setq mac-command-modifier 'meta)
 
-;; Monokai Theme
-;; https://github.com/oneKelvinSmith/monokai-emacs
-(straight-use-package 'monokai-theme)
-(load-theme 'monokai t)
+;; Tangotango
+;; https://github.com/juba/color-theme-tangotango
+(straight-use-package 'tangotango-theme)
+(load-theme 'tangotango t)
 
 ;; Helm
 ;; https://emacs-helm.github.io/helm/
